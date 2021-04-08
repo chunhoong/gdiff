@@ -6,5 +6,5 @@ it('should return commit id of latest tag', () => {
 
 it('should return list of changed files since last tag', () => {
   expect(changedFiles()).toBeDefined();
-})
+});
 
