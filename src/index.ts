@@ -14,5 +14,5 @@ export const changedFiles = () => {
   return changeFiles;
 }
 
-console.log(`------- Changed files between latest commit and latest git tag -------`);
+console.log(`------- Changed files between latest commit and latest tag -------`);
 changedFiles().forEach(file => console.log(file));

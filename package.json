@@ -1,9 +1,9 @@
 {
-  "name": "differ",
-  "version": "1.0.0",
+  "name": "gdiff",
+  "version": "1.0.1",
   "description": "Utility to detect change files between 2 commits",
   "bin": {
-    "differ": "./bin/index.js"
+    "gdiff": "./bin/index.js"
   },
   "scripts": {
     "test": "jest",
@@ -13,7 +13,7 @@
     "git"
   ],
   "author": "Lim Chun Hoong",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "@types/shelljs": "^0.8.8",
