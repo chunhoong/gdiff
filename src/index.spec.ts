@@ -1,10 +1,11 @@
-import { changedFiles, commitIdOfLatestTag } from "./index"
-
-it('should return commit id of latest tag', () => {
-  expect(commitIdOfLatestTag()).toBeDefined();
-});
+import { ShellString } from "shelljs";
+import * as index from "./index";
 
 it('should return list of changed files since last tag', () => {
-  expect(changedFiles()).toBeDefined();
+  const mockCommitIdOfLatestTag = jest.spyOn(index, 'commitIdOfLatestTag');
+  mockCommitIdOfLatestTag.mockReturnValue('856492b367f132a05a50c16f1d98d48177fb1c55' as ShellString);
+  const changedFiles = index.changedFiles();
+  expect(changedFiles).toBeDefined();
+  expect(changedFiles.length).toEqual(4);
 });
 

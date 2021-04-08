@@ -2,9 +2,12 @@
   "name": "differ",
   "version": "1.0.0",
   "description": "Utility to detect change files between 2 commits",
-  "main": "index.js",
+  "bin": {
+    "differ": "./bin/index.js"
+  },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "keywords": [
     "git"
