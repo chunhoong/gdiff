@@ -1,7 +1,7 @@
 {
   "name": "gdiff",
-  "version": "1.0.1",
-  "description": "Utility to detect change files between 2 commits",
+  "version": "1.0.2",
+  "description": "Utility to detect changed files between 2 commits",
   "bin": {
     "gdiff": "./bin/index.js"
   },
