@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { changedFiles } from "./app";
+import { changedFiles, commitIdOfLatestCommit, commitIdOfLatestTag } from "./app";
 
 console.log(`------- Changed files between latest commit and latest tag -------`);
-changedFiles().forEach(file => console.log(file));
+changedFiles(commitIdOfLatestCommit(), commitIdOfLatestTag()).forEach(file => console.log(file));
