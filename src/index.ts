@@ -3,4 +3,8 @@
 import { changedFiles, commitIdOfLatestCommit, commitIdOfLatestTag } from "./app";
 
 console.log(`------- Changed files between latest commit and latest tag -------`);
-changedFiles(commitIdOfLatestCommit(), commitIdOfLatestTag()).forEach(file => console.log(file));
+try {
+  changedFiles(commitIdOfLatestCommit(), commitIdOfLatestTag()).forEach(file => console.log(file));
+} catch (error) {
+  console.log(error.message);
+}

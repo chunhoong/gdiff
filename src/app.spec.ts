@@ -1,4 +1,5 @@
 import * as app from './app';
+import { ERROR_MESSAGE_COMMIT_IDENTICAL } from './app';
 
 it('should return list of changed files between 2 commits', () => {
   const commitIdOfLatestTag = '856492b367f132a05a50c16f1d98d48177fb1c55';
@@ -7,4 +8,9 @@ it('should return list of changed files between 2 commits', () => {
   expect(changedFiles).toBeDefined();
   expect(changedFiles.length).toEqual(7);
 });
-``
+
+it('should throw error when both commits is identical', () => {
+  const commitId1 = '';
+  const commitId2 = '';
+  expect(() => app.changedFiles(commitId1, commitId2)).toThrowError(ERROR_MESSAGE_COMMIT_IDENTICAL);
+});
