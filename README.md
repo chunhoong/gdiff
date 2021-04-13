@@ -2,7 +2,9 @@
 
 A utility to detect the changed files between commits.
 
-Curently GDiff is only able to detect the changed files between the latest commit and the latest tag, but more features will be in the upcoming release.
+## Prequisite
+
+GDiff is a wrapper to Git command. Thus Git must be installed before running GDiff.
 
 ## Installation
 
@@ -12,9 +14,22 @@ npm i -g gdiff
 
 ## How to use
 
-By default, GDiff detects the changed files between the latest commit and latest tag. To execute GDiff, simply navigate to your folder and execute:
+To detect the changed files between two commits:
 
 ```bash
+gdiff --commits <commit-id-of-first-commit> <commit-id-of-second-commit>
+```
+
+To detect the changed files between HEAD and latest tag:
+
+```bash
+gdiff --commits HEAD TAG
+```
+
+GDiff also support file-based configuration, which can be done by creating `gdiff.config.js` at root level of your repository (refer to [sample](sample/gdiff.config.js)). Note that configuration via command line argument should take higher precedence over file-based configuration.
+
+```bash
+# commits can be omitted when if it configured at gdiff.config.js
 gdiff
 ```
 
