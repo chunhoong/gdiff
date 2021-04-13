@@ -8,6 +8,7 @@ import { CommandLineConfig } from './config';
 // prettier-ignore
 const argv = yargs(hideBin(process.argv))
   .version()
+  .array('commits')
   .argv;
 
 DetectChangedFilesCommand.run(argv as CommandLineConfig);

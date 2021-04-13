@@ -1,13 +1,13 @@
 module.exports = {
   showDefaultOutput: false,
-  from: 'latestCommit',
-  to: 'latestTag',
-  handle: ({ changedFiles, from, to }) => {
+  commits: ['HEAD', 'TAG'],
+  handle: ({ changedFiles, commits }) => {
     console.log('---------------------------------------------------');
     console.log(`Deployment checklist ${new Date().toISOString().slice(0, 10)}`);
-    console.log(`From: ${from}`);
-    console.log(`To: ${to}`);
+    console.log(`Between: ${commits[0]} & ${commits[1]}`);
     console.log('---------------------------------------------------');
-    changedFiles.forEach((fileName) => console.log(fileName));
+    changedFiles.forEach((fileName, index) =>
+      console.log(`${index + 1 >= 10 ? index + 1 : index + 1 + ' '} | ${fileName}`)
+    );
   }
 };
