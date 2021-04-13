@@ -2,7 +2,7 @@
 
 A utility to detect the changed files between commits.
 
-## Prequisite
+## Prerequisite
 
 GDiff is a wrapper to Git command. Thus Git must be installed before running GDiff.
 
