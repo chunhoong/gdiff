@@ -32,12 +32,9 @@ export const loadConfig = (commandLineConfig?: CommandLineConfig): Config => {
     throw new Error(ERROR_MESSAGE_COMMITS_NOT_SPECIFIED);
   }
 
-  const commits: [string, string] =
-    (commandLineConfig?.commits as [string, string]) ?? (fileConfig?.commits as [string, string]);
-
   return {
     showDefaultOutput: commandLineConfig?.showDefaultOutput ?? fileConfig?.showDefaultOutput ?? true,
-    commits,
+    commits: (commandLineConfig?.commits as [string, string]) ?? (fileConfig?.commits as [string, string]),
     handle: fileConfig?.handle
   };
 };
