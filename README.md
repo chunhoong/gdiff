@@ -29,7 +29,7 @@ gdiff --commits HEAD TAG
 GDiff also support file-based configuration, which can be done by creating `gdiff.config.js` at root level of your repository (refer to [sample](sample/gdiff.config.js)). Note that configuration via command line argument should take higher precedence over file-based configuration.
 
 ```bash
-# commits can be omitted when if it configured at gdiff.config.js
+# commits can be omitted when commits are set via at gdiff.config.js
 gdiff
 ```
 
