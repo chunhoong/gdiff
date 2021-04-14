@@ -25,7 +25,7 @@ export default class DetectChangedFilesCommand {
     commitId1 = isLatestCommit(commitId1) ? 'latest commit' : isLatestTag(commitId1) ? 'latest tag' : commitId1;
     commitId2 = isLatestCommit(commitId2) ? 'latest commit' : isLatestTag(commitId2) ? 'latest tag' : commitId2;
     console.log(
-      `------- Changed files between ${chalk.cyanBright(commitId1)} & ${chalk.cyanBright(commitId2)} -------`
+      `------- Changed files between ${chalk.cyanBright.bold(commitId1)} & ${chalk.cyanBright.bold(commitId2)} -------`
     );
   }
 }

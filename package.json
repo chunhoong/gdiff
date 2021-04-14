@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "lint": "prettier --write .",
     "lint-staged": "pretty-quick --staged",
-    "prepack": "rimraf ./gdiff.*.tgz && npm run build"
+    "prepack": "rimraf ./gdiff-*.tgz && npm run build"
   },
   "keywords": [
     "git"
