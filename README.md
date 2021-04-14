@@ -9,7 +9,7 @@ GDiff is a wrapper to Git command. Thus Git must be installed before running GDi
 ## Installation
 
 ```bash
-npm i -g gdiff
+npm i -g gdiff@beta
 ```
 
 ## How to use
@@ -29,7 +29,7 @@ gdiff --commits HEAD TAG
 GDiff also support file-based configuration, which can be done by creating `gdiff.config.js` at root level of your repository (refer to [sample](sample/gdiff.config.js)). Note that configuration via command line argument should take higher precedence over file-based configuration.
 
 ```bash
-# commits can be omitted when commits are set via at gdiff.config.js
+# commits can be omitted when commits are set via gdiff.config.js
 gdiff
 ```
 
