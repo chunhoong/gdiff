@@ -1,9 +1,13 @@
-import { cp, exec } from 'shelljs';
-import { ERROR_MESSAGE_COMMIT_IDENTICAL } from './error';
+import { exec } from 'shelljs';
+import { ERROR_MESSAGE_COMMIT_IDENTICAL, ERROR_MESSAGE_TAG_NOT_FOUND } from './error';
 
 export const getCommitIdOfLatestTag = () => {
   const tagName = exec('git describe --tags --abbrev=0', { silent: true }).trimEnd();
-  return exec(`git rev-list -n 1 ${tagName}`, { silent: true }).trimEnd();
+  const commitId = exec(`git rev-list -n 1 ${tagName}`, { silent: true }).trimEnd();
+  if (commitId) {
+    return commitId;
+  }
+  throw new Error(ERROR_MESSAGE_TAG_NOT_FOUND);
 };
 
 export const getCommitIdOfLatestCommit = () => {

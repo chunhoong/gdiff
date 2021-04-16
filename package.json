@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "jest",
-    "jest": "jest --watch --verbose",
+    "jest": "jest --watch",
     "clean": "rimraf ./bin",
     "build": "npm run clean && tsc",
     "prepare": "husky install",
