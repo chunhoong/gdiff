@@ -1,10 +1,25 @@
 #!/usr/bin/env node
 
-import { changedFiles, commitIdOfLatestCommit, commitIdOfLatestTag } from "./app";
+import { hideBin } from 'yargs/helpers';
+import yargs from 'yargs/yargs';
+import DetectChangedFilesCommand from './commands/detect-changed-files';
+import { CommandLineConfig, config } from './config';
 
-console.log(`------- Changed files between latest commit and latest tag -------`);
-try {
-  changedFiles(commitIdOfLatestCommit(), commitIdOfLatestTag()).forEach(file => console.log(file));
-} catch (error) {
-  console.log(error.message);
+// prettier-ignore
+const argv = yargs(hideBin(process.argv))
+  .version()
+  .array('commits')
+  .option('v', {
+    alias: 'verbose',
+    type: 'boolean',
+    default: false
+  })
+  .argv;
+
+const { v, verbose, ...args } = argv;
+
+if (verbose) {
+  config.isPrintingVerboseLog = true;
 }
+
+DetectChangedFilesCommand.run(args as CommandLineConfig);
