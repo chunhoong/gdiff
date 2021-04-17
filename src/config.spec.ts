@@ -1,7 +1,7 @@
 import * as config from './config';
 import { ERROR_MESSAGE_COMMITS_NOT_SPECIFIED } from './error';
 
-afterEach(() => jest.restoreAllMocks());
+afterEach(jest.restoreAllMocks);
 
 it('should load config from file when only file config is present', () => {
   const mockFileConfig: config.FileConfig = {
