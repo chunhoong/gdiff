@@ -9,7 +9,7 @@ GDiff is a wrapper to Git command. Thus Git must be installed before running GDi
 ## Installation
 
 ```bash
-npm i -g gdiff@beta
+npm i -g gdiff
 ```
 
 ## How to use
