@@ -22,7 +22,9 @@ export const loadConfig = (commandLineConfig?: CommandLineConfig): Config => {
   try {
     fileConfig = loadFileConfig();
   } catch (error) {
-    console.log('Unable to load file config');
+    if (config.isPrintingVerboseLog) {
+      console.log('Unable to load file config');
+    }
   }
 
   const isCommitSpecifiedInCommandLineArgument = commandLineConfig?.commits && commandLineConfig.commits.length == 2;
@@ -46,4 +48,8 @@ export const loadConfig = (commandLineConfig?: CommandLineConfig): Config => {
 export const loadFileConfig = (): FileConfig => {
   const explorerSync = cosmiconfigSync('gdiff');
   return explorerSync.load('gdiff.config.js')?.config as FileConfig;
+};
+
+export const config = {
+  isPrintingVerboseLog: false
 };
